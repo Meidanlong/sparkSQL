@@ -1,5 +1,6 @@
-import org.apache.spark.sql.{DataFrame, SparkSession}
+package meidl.utils
 
+import org.apache.spark.sql.{DataFrame, SparkSession}
 
 object CommonTables{
 
@@ -13,7 +14,7 @@ object CommonTables{
     val jdbcDF = spark.read.options(jdbcMap).format("jdbc").load
     jdbcDF.createOrReplaceTempView("rwd_core_static")
     var INTERFACE_ORGANIZE_CODE = spark.sql("select * from rwd_core_static t where t.type_id = 'INTERFACE_ORGANIZE_CODE'")
-    INTERFACE_ORGANIZE_CODE.show(30,false)
+    //INTERFACE_ORGANIZE_CODE.show(30,false)
     INTERFACE_ORGANIZE_CODE
   }
 
