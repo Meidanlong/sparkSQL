@@ -4,9 +4,9 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
 
 object test {
 
-  def main(args: Array[String]) {
-
-    val spark = SparkSession.builder().appName("test").master("local[3]").getOrCreate()
+//  def main(args: Array[String]) {
+//
+//    val spark = SparkSession.builder().appName("test").master("local[3]").getOrCreate()
         //spark.
 //    //spark.table("")
 //
@@ -108,19 +108,19 @@ object test {
     //    //根据某一列进行分组，然后再进行聚合操作： select age,count(1) from table group by age
     //    data.groupBy("age").count().show()
 
-    //spark.stop()
-  }
-
-  def i020303(sparkSession: SparkSession, month: String): DataFrame = {
-    val spark = sparkSession
-    //val path = "C:\\Users\\Administrator.000\\Desktop\\I020303_" + month + ".csv"
-    val path = "C:\\Users\\Administrator.000\\Desktop\\bbb.csv"
-    //val infoDF = rdd.map(_.split(",")).map(line => Info(line(0).toInt, line(1), line(2).toInt)).toDF()
-    var unterminal_data = spark.read.option("header", "false").option("inferSchema", false.toString).csv(path)
-    //var unterminal_data = spark.sparkContext.textFile(path).map(line => I020303(line(0).toString, line(1).toString, line(2).toString, line(3).toString, line(4).toString, line(5).toString, line(6).toString, line(7).toString, line(8).toString, line(9).toString, line(10).toString, line(11).toString, line(12).toString, line(13).toString, line(14).toString, line(15).toString, line(16).toString, line(17).toString, line(18).toString, line(19).toString, line(20).toString, line(21).toString, line(22).toString)).toDF()
-    unterminal_data.createOrReplaceTempView("unterminal_data")
-    unterminal_data.show(false)
-    unterminal_data
+//    spark.stop()
+//  }
+//
+//  def i020303(sparkSession: SparkSession, month: String): DataFrame = {
+//    val spark = sparkSession
+//    //val path = "C:\\Users\\Administrator.000\\Desktop\\I020303_" + month + ".csv"
+//    val path = "C:\\Users\\Administrator.000\\Desktop\\bbb.csv"
+//    //val infoDF = rdd.map(_.split(",")).map(line => Info(line(0).toInt, line(1), line(2).toInt)).toDF()
+//    var unterminal_data = spark.read.option("header", "false").option("inferSchema", false.toString).csv(path)
+//    //var unterminal_data = spark.sparkContext.textFile(path).map(line => I020303(line(0).toString, line(1).toString, line(2).toString, line(3).toString, line(4).toString, line(5).toString, line(6).toString, line(7).toString, line(8).toString, line(9).toString, line(10).toString, line(11).toString, line(12).toString, line(13).toString, line(14).toString, line(15).toString, line(16).toString, line(17).toString, line(18).toString, line(19).toString, line(20).toString, line(21).toString, line(22).toString)).toDF()
+//    unterminal_data.createOrReplaceTempView("unterminal_data")
+//    unterminal_data.show(false)
+//    unterminal_data
     //unterminal_data.col("nnnnoooo2").r("organize_code")
 
     //    val orgCode = CommonTables
@@ -131,9 +131,9 @@ object test {
     //    unterminal_orgCode_data.show(30)
     //    unterminal_orgCode_data
 
-  }
-
-  case class I020303(no1: String, no2: String, no3: String, no4: String, no5: String, no6: String, no7: String, no8: String, no9: String, no10: String, no11: String, no12: String, no13: String, no14: String, no15: String, no16: String, no17: String, no18: String, no19: String, no20: String, no21: String, no22: String, no23: String)
-  case class I020330(nnnnoooo1: String, nnnnoooo2: String, nnnnoooo3: String, nnnnoooo4: String, nnnnoooo5: String, nnnnoooo6: String, nnnnoooo7: String, nnnnoooo8: String, nnnnoooo9: String, nnnnoooo10: String, nnnnoooo11: String, nnnnoooo12: String, nnnnoooo13: String, nnnnoooo14: String, nnnnoooo15: String, nnnnoooo16: String, nnnnoooo17: String, nnnnoooo18: String, nnnnoooo19: String, nnnnoooo20: String, nnnnoooo21: String, nnnnoooo22: String, nnnnoooo23: String)
+//  }
+//
+//  case class I020303(no1: String, no2: String, no3: String, no4: String, no5: String, no6: String, no7: String, no8: String, no9: String, no10: String, no11: String, no12: String, no13: String, no14: String, no15: String, no16: String, no17: String, no18: String, no19: String, no20: String, no21: String, no22: String, no23: String)
+//  case class I020330(nnnnoooo1: String, nnnnoooo2: String, nnnnoooo3: String, nnnnoooo4: String, nnnnoooo5: String, nnnnoooo6: String, nnnnoooo7: String, nnnnoooo8: String, nnnnoooo9: String, nnnnoooo10: String, nnnnoooo11: String, nnnnoooo12: String, nnnnoooo13: String, nnnnoooo14: String, nnnnoooo15: String, nnnnoooo16: String, nnnnoooo17: String, nnnnoooo18: String, nnnnoooo19: String, nnnnoooo20: String, nnnnoooo21: String, nnnnoooo22: String, nnnnoooo23: String)
 
 }
