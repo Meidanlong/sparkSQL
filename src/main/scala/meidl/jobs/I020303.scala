@@ -18,8 +18,7 @@ object I020303 {
 
   def i020303(sparkSession: SparkSession, month: String): DataFrame = {
     val spark = sparkSession
-    //val path = "C:\\Users\\Administrator.000\\Desktop\\I020303_" + month + ".csv"
-    val path = "C:\\Users\\Administrator.000\\Desktop\\bbb.csv"
+    val path = "C:\\Users\\Administrator.000\\Desktop\\I020303_" + month + ".csv"
     var unterminalData = spark.read.option("header", "false").option("inferSchema", false.toString).csv(path)
     unterminalData.createOrReplaceTempView("unterminal_data")
     unterminalData = spark.sql(unterminalData_sql.unterminalData().toString)
@@ -34,11 +33,12 @@ object I020303 {
     unterminalOrgCodeData.show(30)
     unterminalOrgCodeData
 
+
   }
 
   def main(args: Array[String]): Unit = {
     val sparkSession = SparkSession.builder().appName("i020303").master("local[*]").getOrCreate()
-    i020303(sparkSession, "201809")
+    i020303(sparkSession, "meidl")
     sparkSession.stop()
   }
 }

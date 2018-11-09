@@ -45,7 +45,7 @@ object I020303Sql{
      sql.append("_c20 user_id, ")
      sql.append("_c21 offer_id, ")
      sql.append("_c22 offer_name ")
-     sql.append("from unterminal_data")
+     sql.append("from unterminal_data ")
      return sql;
    }
 

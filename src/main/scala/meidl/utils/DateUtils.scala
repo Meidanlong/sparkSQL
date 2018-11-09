@@ -17,12 +17,29 @@ object DateUtils {
   //目标日期格式
   val TARGET_FORMAT = FastDateFormat.getInstance("yyyy-MM-dd HH:mm:ss")
 
+  //目标日期格式(月份)
+  val TARGET_FORMAT_MONTH = FastDateFormat.getInstance("yyyyMM")
+
 
   /**
    * 获取时间：yyyy-MM-dd HH:mm:ss
    */
   def parse(time: String) = {
     TARGET_FORMAT.format(new Date(getTime(time)))
+  }
+
+  /**
+   * 获取时间：yyyyMM-dd HH:mm:ss
+   */
+  def parse(time: Date) = {
+    TARGET_FORMAT.format(time)
+  }
+
+  /**
+   * 获取时间：yyyyMM
+   */
+  def parseByMonth(time: Date) = {
+    TARGET_FORMAT_MONTH.format(time)
   }
 
   /**
