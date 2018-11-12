@@ -60,9 +60,7 @@ def listOfJkRwArrears(tableDF :DataFrame){
           var busi_kind_id = "0"
           if(null != info.get(2) && !"".equals(info.get(2))){
             val busi_kind_id1 = info.get(2).toString
-            //val busi_kind_id2 = String.valueOf(busi_kind_id1)
             busi_kind_id = busi_kind_id1.replace(".0000000000","")
-            println(busi_kind_id)
           }
           var product_name = "0"
           if(null != info.get(3) && !"".equals(info.get(3))){
