@@ -18,6 +18,7 @@ object CommonTables {
     val rwdCoreStatic = spark.read.options(rwdTrans1o).format("jdbc").load
     rwdCoreStatic.createOrReplaceTempView("rwd_core_static")
     var interfaceOrganizeCode = spark.sql(CommonTablesSql.interfaceOrganizeCode.toString)
+    println("=======================organizeCode=======================")
     interfaceOrganizeCode.show(30, false)
     interfaceOrganizeCode
   }
@@ -28,6 +29,7 @@ object CommonTables {
     var i020302Unterminal = spark.read.options(rwdTrans1o).format("jdbc").load
     i020302Unterminal.createOrReplaceTempView("i020302_unterminal")
     i020302Unterminal = spark.sql(CommonTablesSql.i020302Unterminal.toString)
+    println("=======================i020302Unterminal=======================")
     i020302Unterminal.show(30, false)
     i020302Unterminal
   }
@@ -38,6 +40,7 @@ object CommonTables {
     var caUnterminal = spark.read.options(rwdTrans1o).format("jdbc").load
     caUnterminal.createOrReplaceTempView("I020302_ca_unterminal")
     caUnterminal = spark.sql(I020302Sql.jkRwArrearsBusi.toString)
+    println("=======================caUnterminal=======================")
     caUnterminal.show(30, false)
     caUnterminal
   }
@@ -48,6 +51,7 @@ object CommonTables {
     var tdChlKinddef = spark.read.options(rwdTrans1o).format("jdbc").load
     tdChlKinddef.createOrReplaceTempView("td_chl_kinddef")
     tdChlKinddef = spark.sql(CommonTablesSql.tdChlKinddef.toString)
+    println("=======================tdChlKinddef=======================")
     tdChlKinddef.show(30, false)
     tdChlKinddef
   }
@@ -58,6 +62,7 @@ object CommonTables {
     var jkChannel = spark.read.options(rwdTrans1o).format("jdbc").load
     jkChannel.createOrReplaceTempView("jk_channel")
     jkChannel = spark.sql(CommonTablesSql.jkChannel.toString)
+    println("=======================tdChlKinddef=======================")
     jkChannel.show(30, false)
     jkChannel
   }
